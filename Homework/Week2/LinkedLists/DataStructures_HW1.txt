@@ -1,1 +1,28 @@
+Using the programming language of your choice implement a singly and doubly linked list. You can not use built-in implementations of these data structures. Use the following list of value to test your implementations. numbers-2.txt
+
+Download numbers-2.txt 
+Single Linked List
+
+    Head
+    Node
+        Data
+        Next
+    Read (beginning, random position, end)
+    Insert (beginning, random position, end)
+    Delete (beginning, random position, end)
+    Linear Search
+    Sort (use selection sort or insertion sort)
+
+Double Linked List
+
+    Head
+    Node
+        Data
+        Next
+        Prev
+    Read (beginning, random position, end)
+    Insert (beginning, random position, end)
+    Delete (beginning, random position, end)
+    Linear Search
+    Sort (use selection sort or insertion sort)
 
