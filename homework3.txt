@@ -1,0 +1,10 @@
+1. Write a linear search algorithm both recursively and iteratively in pseudo code. Comment to explain.
+
+2. Write the same linear search algorithms in the programming language of your choice. Comment to explain.
+
+3. Rewrite the binary search algorithm from week 1 in a recursive form in pseudo code and in the programming language of your choice. Comment to explain.
+
+4. Find a for loop you wrote in previous course work and rewrite it as a recursive function (it can not be a simple linear search problem). Please show the original code in your submission.
+
+5. Use the following attached documents to test your search algorithms. numbers-3.txt
+Download numbers-3.txt Use one of your sorting algorithms to sort the list first before implementing binary search. What position is 8128705 in?   What position is 5842193?
