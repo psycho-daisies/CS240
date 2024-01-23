@@ -1,1 +1,124 @@
+1. Write a linear search algorithm both recursively and iteratively in pseudo code. Comment to explain.
+ITERATIVE VERSION:
+# Loop through the array & check every element for the target
+function linearsearch(array, target):  
+  i = 0  
+  while counter < size of array
+    check if element at index i == target
+      return i  # return the index when target found
+	  else:
+		  i += 1  # move to the next element
 
+RECURSIVE VERSION:
+function recursive_linear_search(array, target, index=0):
+  #BASE CASE
+  if index >= len(array);
+    return -1  # end search after checking every element
+	# When target found, return index
+	if array[index] == target:
+		return index
+	# Recursively call function to search the next index
+	index += 1  # next index to check
+	return linear_search_recursive(array, target, index)
+
+2. Write the same linear search algorithms in the programming language of your choice. Comment to explain.
+def linear_search_recursive(array, target_number, index):  
+    # Base case: target not found at any index  
+    if index >= len(array):  
+        return -1  
+  
+    # Checks for number, return index when found  
+    if array[index] == target_number:  
+        return index  
+  
+    # Recursively call function to keep searching  
+    index += 1  
+    return linear_search_recursive(array, target_number, index)
+
+# Helper function
+def linear_search(array, target_number):  
+    return linear_search_recursive(array, target_number, 0)
+
+3. Rewrite the binary search algorithm from week 1 in a recursive form in pseudo code and in the programming language of your choice. Comment to explain.
+Binary Search RECURSIVE PSEUDOCODE:
+function recursive_binary_search(arr, target, low, high):
+	# Base case:
+	if the target number is not found in the array
+	stop the search and end recursive function calls
+	
+	# calculate the middle index of the search space
+	set mid = low + high / 2
+	
+	# Check if the middle element equals the target number
+		# return mid
+	
+	# if middle element > target, search the left side
+		high = mid - 1  # the search space is reduced and the high index is now mid - 1
+		return recursive_binary_search(arr, target, low, high):
+	
+	# if middle element < target, search the right side
+		low = mid + 1  # the search space is reduced and the low index is now mid + 1
+		return recursive_binary_search(arr, target, low, high):
+
+Binary Search in Python:
+def recursive_binary_search(arr, target, low, high):  
+   # BASE CASE: target number not found  
+   if low > high or high <= 0:  
+      return -1  # Target not found  
+  
+   # Calculate the middle index of the search area   mid = (low + high) // 2  
+   mid_value = int(arr[mid])  # convert to int  
+   # Check if the middle element is equal to the target number   
+   if mid_value == target:  
+      return mid  # Target found at index mid  
+  
+   # RECURSIVE CASE:   # If the target number > middle element, search the right half
+   elif mid_value < target:  
+      return recursive_binary_search(arr, target, mid + 1, high)  
+  
+   # If the target number < middle element, search in the left half  
+   else:  
+      return recursive_binary_search(arr, target, low, mid - 1) 
+  
+# Helper function to start a binary search  
+def binary_search_start(arr, target):  
+   return recursive_binary_search(arr, target, 0, len(arr))
+
+4. Find a for loop you wrote in previous course work and rewrite it as a recursive function (it can not be a simple linear search problem). Please show the original code in your submission.
+    // Recursive helper method to add a new node to the linked list
+    private ListNode add_to_list_recursive(ListNode current, Entry entry) {
+        // Base case: if the current node is null, create a new node
+        if (current == null) {
+            return new ListNode(entry);
+        }
+
+        // Recursive case: call the function with the next node in the list
+        current.next = add_to_list_recursive(current.next, entry);
+        return current;
+    }
+
+    // Public method to add a new node to the linked list using the helper method
+    public void add_to_list(Entry entry) {
+        front = add_to_list_recursive(front, entry);
+    }
+
+    // Adds the given Entry to the end of the list
+    public void add(Entry entry) {
+        if (front == null) {
+            // adding to an empty list
+            front = new ListNode(entry);
+            size++;
+            return;
+        } else {
+            // adding to the end of an existing list
+            ListNode current = front;
+            while (current.next != null) {
+                current = current.next;
+            }
+            current.next = new ListNode(entry);
+            size++;
+        }
+    }
+
+5. Use the following attached documents to test your search algorithms. numbers-3.txt
+Download numbers-3.txt Use one of your sorting algorithms to sort the list first before implementing binary search. What position is 8128705 in?   What position is 5842193?
