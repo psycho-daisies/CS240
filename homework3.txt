@@ -85,6 +85,40 @@ def binary_search_start(arr, target):
    return recursive_binary_search(arr, target, 0, len(arr))
 
 4. Find a for loop you wrote in previous course work and rewrite it as a recursive function (it can not be a simple linear search problem). Please show the original code in your submission.
+    // Recursive helper method to add a new node to the linked list
+    private ListNode add_to_list_recursive(ListNode current, Entry entry) {
+        // Base case: if the current node is null, create a new node
+        if (current == null) {
+            return new ListNode(entry);
+        }
+
+        // Recursive case: call the function with the next node in the list
+        current.next = add_to_list_recursive(current.next, entry);
+        return current;
+    }
+
+    // Public method to add a new node to the linked list using the helper method
+    public void add_to_list(Entry entry) {
+        front = add_to_list_recursive(front, entry);
+    }
+
+    // Adds the given Entry to the end of the list
+    public void add(Entry entry) {
+        if (front == null) {
+            // adding to an empty list
+            front = new ListNode(entry);
+            size++;
+            return;
+        } else {
+            // adding to the end of an existing list
+            ListNode current = front;
+            while (current.next != null) {
+                current = current.next;
+            }
+            current.next = new ListNode(entry);
+            size++;
+        }
+    }
 
 5. Use the following attached documents to test your search algorithms. numbers-3.txt
 Download numbers-3.txt Use one of your sorting algorithms to sort the list first before implementing binary search. What position is 8128705 in?   What position is 5842193?
