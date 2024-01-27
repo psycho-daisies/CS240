@@ -14,41 +14,37 @@ Implement a stack for both a Linked List & Array. Use your HW 1 implementation o
 
 
 class Stack:
-    def __init__(self, size=None):
+    def __init__(self, size=None):  # Constructor for Stack
         if size is not None:
             self.items = []
             self.max_size = size
         else:
             # Default constructor
             self.items = []
-
-    def push(self, item):
+            
+    # Push adds an item to the top of the Stack; except if the Stack is full
+    def Push(self, item):
         if not self.is_full():
             self.items.append(item)
         else:
             print(f"Can't add {item} to a full stack! ")
-
-    def pop(self):
+    # Pop removes the from the top of the stack
+    def Pop(self):
         if not self.is_empty():
             return self.items.pop()
         else:
             print("Can't pop from an empty Stack!")
 
-    def custom_pop(self):
-        if not self.is_empty():
-            popped_item = self.items[-1]
-            del self.items[-1]
-            return popped_item
-        else:
-            print("Can't pop from an empty Stack!")
-
-    def is_empty(self):
+    # Returns True if the stack is empty
+    def IsEmpty(self):
         return len(self.items) == 0
 
-    def is_full(self):
+    # Returns True if the Stack is full
+    def IsFull(self):
         return len(self.items) == self.max_size
 
-    def peek(self):
+    # 
+    def Peek(self):
         if not self.is_empty():
             return self.items[-1]
         else:
