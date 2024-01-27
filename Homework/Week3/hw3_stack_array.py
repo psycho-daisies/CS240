@@ -18,34 +18,32 @@ class Stack:
         if size is not None:
             self.items = []
             self.max_size = size
-        else:
-            # Default constructor
-            self.items = []
-            
+
     # Push adds an item to the top of the Stack; except if the Stack is full
     def Push(self, item):
-        if not self.is_full():
+        if not self.IsFull():
             self.items.append(item)
         else:
             print(f"Can't add {item} to a full stack! ")
-    # Pop removes the from the top of the stack
+
+    # Pop removes from the top of the stack
     def Pop(self):
-        if not self.is_empty():
+        if not self.IsEmpty():  # If stack is not empty we Pop
             return self.items.pop()
         else:
-            print("Can't pop from an empty Stack!")
+            print("Can't Pop! ~ Stack is Empty!")
 
     # Returns True if the stack is empty
     def IsEmpty(self):
         return len(self.items) == 0
 
-    # Returns True if the Stack is full
+    # Returns True if the Stack is full by checking size of array to the max Stack size
     def IsFull(self):
         return len(self.items) == self.max_size
 
-    # 
+    # Peek looks at the top item
     def Peek(self):
-        if not self.is_empty():
+        if not self.IsEmpty():
             return self.items[-1]
         else:
             print("Can't Peek! ~ Stack is Empty")
@@ -54,31 +52,35 @@ class Stack:
         return len(self.items)
 
 
-# Example usage:
+# Testing Stack functions
 array_stack = Stack(4)
-array_stack.push(1)
-print("Top element:", array_stack.peek())
+array_stack.Push(1)
+print("Top element:", array_stack.Peek())
 
-array_stack.push(2)
+array_stack.Push(2)
+
+print("Take a PEEK at the top of the stack:", array_stack.Peek())
+print("Popped item: ", array_stack.Pop())
+
+print("Is the stack full?", array_stack.IsFull())
+
+print("Stack size is: ", array_stack.size())
+array_stack.Push(3)
+array_stack.Push(4)
+array_stack.Push(5)
+print("Stack size:", array_stack.size())
+print("Is the stack full?", array_stack.IsFull())
 
 
+array_stack.Push(6)  # Can't Push 6 on to Stack because it's full
+print("Take a PEEK at the top of the stack:", array_stack.Peek())
+print("Popped item: ", array_stack.Pop())
+print("Popped item: ", array_stack.Pop())
+print("Popped item: ", array_stack.Pop())
+print("Popped item: ", array_stack.Pop())
 
-print("Take a PEEK at the top of the stack:", array_stack.peek())
-array_stack.pop()
+array_stack.Pop()  # Can't Pop because the stack is now empty
 
-print("Is the stack full?", array_stack.is_full())
 
 print("Stack size:", array_stack.size())
-array_stack.push(3)
-array_stack.push(4)
-array_stack.push(5)
-array_stack.push(5)
-array_stack.push(5)
-array_stack.pop()
-array_stack.pop()
-array_stack.pop()
-array_stack.pop()
-array_stack.pop()
-array_stack.pop()
-print("Stack size:", array_stack.size())
-print("Is the stack full?", array_stack.is_full())
+print("Is the stack full?", array_stack.IsFull())
