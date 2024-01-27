@@ -62,8 +62,8 @@ print("Top element:", array_stack.peek())
 array_stack.push(2)
 
 
-array_stack.custom_pop()
-print("Top element:", array_stack.peek())
+
+print("Take a PEEK at the top of the stack:", array_stack.peek())
 array_stack.pop()
 
 print("Is the stack full?", array_stack.is_full())
