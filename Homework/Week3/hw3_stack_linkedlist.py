@@ -10,6 +10,10 @@ Implement a stack for both a Linked List & Array. Use your HW 1 implementation o
     IsEmpty
     IsFull
     Peek
+
+Uses the Linked List assignment as a starting point
+Found and used this as a resource:
+https://www.geeksforgeeks.org/implement-a-stack-using-singly-linked-list/
 """
 
 
