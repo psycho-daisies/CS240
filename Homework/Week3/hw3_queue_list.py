@@ -45,7 +45,7 @@ class DoublyLinkedList:
     def get_size(self):
         return self.size
 
-
+# Still a WIP 
 class DoublyLinkedListQueue:
     def __init__(self):
         self.queue = DoublyLinkedList()
@@ -81,10 +81,4 @@ num = test_list.dequeue()
 print(num)
 num = test_list.dequeue()
 
-print(num)
-num = test_list.dequeue()
 
-print(num)
-num = test_list.dequeue()
-
-print(num)
