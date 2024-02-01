@@ -11,8 +11,8 @@ def merge_sort(arr):
 
     # Splits the array into two equal halves
     mid = len(arr) // 2
-    left = arr[:mid]
-    right = arr[mid:]
+    left = arr[:mid]  # from start of array to the middle
+    right = arr[mid:]  # from the middle to the end
 
     # RECURSIVE CASE: recursively splits each sub-array in half
     merge_sort(left)
