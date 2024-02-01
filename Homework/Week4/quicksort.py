@@ -1,3 +1,5 @@
+# Quicksort Assignment
+# By: Troy Brunette
 """I found the CS Dojo YouTube video on Quicksort a great resource to help with this assignment."""
 
 from res.importfile import read_file, print_sorted
