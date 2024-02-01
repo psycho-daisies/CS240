@@ -1,6 +1,7 @@
 # Merge Sort Assignment
 # By: Troy Brunette
 
+"""Uses Binary Search from past assignment and a couple functions for reading the provided numbers text file"""
 from res.binarysearch import binary_search
 from res.importfile import read_file, print_sorted
 
