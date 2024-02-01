@@ -9,7 +9,7 @@ def merge_sort(arr):
     if len(arr) <= 1:  # BASE CASE
         return arr
 
-    # Splits the array into two equal halves
+    # Divide & Conquer: split the array into two sub-arrays: left & right
     mid = len(arr) // 2
     left = arr[:mid]  # from start of array to the middle
     right = arr[mid:]  # from the middle to the end
@@ -18,7 +18,7 @@ def merge_sort(arr):
     merge_sort(left)
     merge_sort(right)
 
-    # Merges back together in sorted order
+    # Sorts and then merges the sub-arrays
     return merge(arr, left, right)
 
 # Merge compares the elements in the sub-arrays and puts them back together in order
