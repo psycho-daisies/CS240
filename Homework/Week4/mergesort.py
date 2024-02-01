@@ -4,21 +4,24 @@
 from res.binarysearch import binary_search
 from res.importfile import read_file, print_sorted
 
-
+# Merge Sort recursively divides the array into sub-arrays and merges it back in sorted order
 def merge_sort(arr):
-    if len(arr) <= 1:
+    if len(arr) <= 1:  # BASE CASE
         return arr
 
+    # Splits the array into two equal halves
     mid = len(arr) // 2
     left = arr[:mid]
     right = arr[mid:]
 
+    # RECURSIVE CASE: recursively splits each sub-array in half
     merge_sort(left)
     merge_sort(right)
 
+    # Merges back together in sorted order
     return merge(arr, left, right)
 
-
+# Merge compares the elements in the sub-arrays and puts them back together in order
 def merge(arr, left, right):
     i = j = k = 0
 
