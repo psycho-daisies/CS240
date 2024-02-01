@@ -1,0 +1,127 @@
+# Troy Brunette
+# Homework 4 Questions: MergeSort & Quicksort
+
+1. Write in pseudo code a merge sort algorithm the works over an array. Comment to explain the algorithm.
+def merge_sort(arr):
+    # BASE CASE:
+    if length of arr <= 1:
+        return arr
+
+    # Divide & Conquer: split the array into two sub-arrays: left & right
+    middle = length of arr // 2
+    left = from start up to the pivot
+    right = from pivot to the end
+
+    # RECURSIVE CASE: Keep splitting array into two halves
+    merge_sort(left)
+    merge_sort(right)
+
+    # Sorts and then merges the arrays
+    return merge(left, right)
+
+
+def merge(left, right):
+    sorted = []
+    i = 0
+    j = 0
+
+    # Compares the sub-arrays and puts them in sorted order
+    while i < len(left) and j < len(right):
+        if left[i] <= right[j]:
+            sorted[k] = left[i]
+            i += 1
+        else:
+            sorted[k] = right[j]
+            j += 1
+        k += 1
+
+    # Merges the sub-arrays
+    while i < len(left):
+        sorted[k] = left[i]
+        i += 1
+        k += 1
+
+    while j < len(right):
+        sorted[k] = right[j]
+        j += 1
+        k += 1
+
+
+2. Write in the programming language of your choice a merge sort algorithm that works over an array. Comment to explain the algorithm.
+def merge_sort(arr):
+    if len(arr) <= 1:
+        return arr
+
+    mid = len(arr) // 2
+    left = arr[:mid]
+    right = arr[mid:]
+
+    merge_sort(left)
+    merge_sort(right)
+
+    return merge(arr, left, right)
+
+
+def merge(arr, left, right):
+    i = j = k = 0
+
+    # Compares the sub-arrays and puts them in sorted order
+    while i < len(left) and j < len(right):
+        if left[i] <= right[j]:
+            arr[k] = left[i]
+            i += 1
+        else:
+            arr[k] = right[j]
+            j += 1
+        k += 1
+
+    # Merges the sub-arrays
+    while i < len(left):
+        arr[k] = left[i]
+        i += 1
+        k += 1
+    # Copy the remaining elements
+    while j < len(right):
+        arr[k] = right[j]
+        j += 1
+        k += 1
+
+    return arr
+
+3. Write in pseudo code a quick sort algorithm the works over an array. Comment to explain the algorithm.
+
+4. Write in the programming language of your choice a quick sort algorithm that works over an array. Comment to explain the algorithm.
+def quicksort(arr, l, r):
+    if l >= r:  # BASE CASE
+        return
+    # Recursive CASE: partition / choosing a pivot
+    p = partition(arr, l, r)
+
+    # calling quicksort on the two groups
+    quicksort(arr, l, p - 1)
+    quicksort(arr, p + 1, r)
+
+# Separates numbers into two groups
+# Numbers less than the pivot
+# Numbers greater than the pivot
+def partition(arr, l, r):
+    pivot = arr[r]
+    i = l - 1
+    for j in range(l, r):
+        if arr[j] <= pivot:
+            i = i + 1
+
+            (arr[i], arr[j]) = (arr[j], arr[i])
+
+    (arr[i + 1], arr[r]) = (arr[r], arr[i + 1])
+
+    return i + 1
+5. How do the best, average and worst case time complexities compare between these two algorithms?
+
+6. Use the uploaded file to verify your sort algorithms are working. numbers-4.txt
+Download numbers-4.txt  What is the position of 90262? What is the position of 11559?
+
+The position of 90262 is index 3608 / line 3609.
+The number 11559 is not in the list of numbers.
+*/
+
