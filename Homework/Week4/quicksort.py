@@ -2,6 +2,7 @@
 # By: Troy Brunette
 """I found the CS Dojo YouTube video on Quicksort a great resource to help with this assignment."""
 
+"""Uses Binary Search from past assignment and a couple functions for reading the provided numbers text file"""
 from res.importfile import read_file, print_sorted
 from res.binarysearch import binary_search
 
