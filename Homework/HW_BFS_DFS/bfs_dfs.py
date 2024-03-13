@@ -1,5 +1,5 @@
-from queue.py import Queue
-from read_from_file.py import get_graph, get_neighbors
+from queue import Queue
+from read_from_file import get_graph, get_neighbors
 
 
 def breadth_fist_search(graph, start):
