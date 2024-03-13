@@ -13,7 +13,7 @@ and checks the distances for each of its neighbors
 
 
 """
-from homework.djikstra.minheap import MinHeap
+from minheap import MinHeap
 import yaml
 
 # Reads an adjacency list from a file and returns a connections dictionary
