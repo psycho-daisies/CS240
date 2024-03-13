@@ -1,3 +1,44 @@
+"""
+Troy Brunette
+BFS / DFS
+
+This program explores using Depth First Search and Breadth First Search to explore a graph.
+For the BFS algorithm it uses a Queue data structure to keep track of the nodes that need to be explored.
+For the DFS algorithm it uses a Stack data structure to keep track of the nodes that need to be explored.
+There is an included data file with an example graph to explore.
+
+
+
+Algorithm:
+    * Start at an initial node
+    * Visit node
+    * Explore neighbors
+    * check for unvisited neighbors
+    * visit neighbor node/s
+    * if no more unvisited neighbors, go back to previous node
+    * Repeat until all nodes are visited
+
+Pseudocode:
+def depth_first_search(graph, start):
+    visited = [False] * len(graph)
+    stack = [start]
+    order = []
+
+    while stack:
+        current = stack.pop()
+        if not visited[current]:
+            visited[current] = True
+            order.append(current)
+
+            # Push neighbors onto the stack in the order they appear in the adjacency list
+            for neighbor in graph[current]:
+                if not visited[neighbor]:
+                    stack.append(neighbor)
+    return order
+
+Time Complexity: O(V + E)
+
+"""
 from queue import Queue
 from read_from_file import get_graph, get_neighbors
 
