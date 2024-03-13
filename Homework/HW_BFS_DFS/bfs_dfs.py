@@ -86,22 +86,25 @@ def depth_first_search(graph, start):
         print(order)
     return order
 
+def main():
+    # Get graph from YAML file
+    graph_data = get_graph('graph.yaml')
 
-# Get graph from YAML file
-graph_data = get_graph('graph.yaml')
+    # Get list of nodes and neighbors
+    graph_numbers = get_neighbors(graph_data)
 
-# Get list of nodes and neighbors
-graph_numbers = get_neighbors(graph_data)
+    # Print Graph
+    print("Node and its connections:")
+    for node, neighbors in graph_numbers.items():
+        print(f"{node}: {neighbors}")
 
-# Print Graph
-print("Node and its connections:")
-for node, neighbors in graph_numbers.items():
-    print(f"{node}: {neighbors}")
+    # Run BFS and DFS
+    bfs_order_numbers = breadth_fist_search(graph_numbers, 0)
+    dfs_order_numbers = depth_first_search(graph_numbers, 0)
 
-# Run BFS and DFS
-bfs_order_numbers = breadth_fist_search(graph_numbers, 0)
-dfs_order_numbers = depth_first_search(graph_numbers, 0)
+    # Print Results
+    print("BFS order: ", bfs_order_numbers)
+    print("DFS order: ", dfs_order_numbers)
 
-# Print Results
-print("BFS order: ", bfs_order_numbers)
-print("DFS order: ", dfs_order_numbers)
+if __name__ == "__main__":
+    main()
