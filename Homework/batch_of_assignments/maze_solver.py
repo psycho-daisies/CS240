@@ -15,24 +15,6 @@ Algorithm:
     * if no more unvisited neighbors, go back to previous node
     * Repeat until all nodes are visited
 
-Pseudocode:
-def depth_first_search(graph, start):
-    visited = [False] * len(graph)
-    stack = [start]
-    order = []
-
-    while stack:
-        current = stack.pop()
-        if not visited[current]:
-            visited[current] = True
-            order.append(current)
-
-            # Push neighbors onto the stack in the order they appear in the adjacency list
-            for neighbor in graph[current]:
-                if not visited[neighbor]:
-                    stack.append(neighbor)
-    return order
-
 Time Complexity: O(V + E)
 
 """
